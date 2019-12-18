@@ -32,7 +32,3 @@ def index():
 		persLangs.append(l)
 
 	return jsonify(persLangs)
-
-@app.route('/h/<name>')
-def another(name):
-	return f'hello world {name}'
