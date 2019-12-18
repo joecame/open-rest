@@ -10,17 +10,28 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 	r = requests.get('https://api.github.com/users/haikelfazzani/repos?per_page=200')	
+	total = 0
 	data = {}
+	persLangs = []
+
 	for v in r.json():
 		x = v["language"]
 		if x:
+			total = total + 1
 			idx = langs.index(x.strip().lower())			
 			if x in data:				
 				data[x] = data[x] + 1
 			else:				
 				data[x] = 1
 
-	return jsonify(data)
+	for x in data:
+		l = {}
+		l["lang"] = x
+		l["count"] = data[x]
+		l["percent"] = int((data[x] * 100) / total)
+		persLangs.append(l)
+
+	return jsonify(persLangs)
 
 @app.route('/h/<name>')
 def another(name):
