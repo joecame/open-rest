@@ -1,8 +1,8 @@
 # Open rest
 
 ### Github user main languages used in repos
-- GET http://haikel.pythonanywhere.com/
-
+- GET http://haikel.pythonanywhere.com/<username>
+example : http://haikel.pythonanywhere.com/haikelfazzani
 ```json
 [
   {

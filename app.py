@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import requests
 
 langs = ['java', 'javascript','typescript','css','html',
@@ -7,9 +7,9 @@ langs = ['java', 'javascript','typescript','css','html',
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-	r = requests.get('https://api.github.com/users/haikelfazzani/repos?per_page=200')	
+@app.route('/<username>')
+def index(username):
+	r = requests.get(f'https://api.github.com/users/{username}/repos?per_page=200')	
 	total = 0
 	data = {}
 	persLangs = []
