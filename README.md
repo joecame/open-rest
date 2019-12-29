@@ -17,3 +17,7 @@ example : http://haikel.pythonanywhere.com/haikelfazzani
   },
 ...etc]
 ```
+
+### dev commands
+- pipenv shell
+- flask run
