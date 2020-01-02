@@ -1,8 +1,28 @@
 # Open rest
 
+### Atom package details/stats
+- GET http://haikel.pythonanywhere.com/api/atom/package/<name> 
+```json
+{
+  "package_author": "atom",
+  "package_desc": "Share your workspace with team members and collaborate on code in real time",
+  "package_downloads": "959,499",
+  "package_gravatar": "https://github.com/atom.png",
+  "package_name": "teletype",
+  "package_stars": "600",
+  "package_tags": [
+    "collaboration",
+    "collaborative-editing",
+    "pair-programming",
+    "real-time"
+  ],
+  "package_url": "https://atom.io/packages/teletype"
+}
+```
+
 ### Github user main languages used in repos
-- GET http://haikel.pythonanywhere.com/{username}  
-example : http://haikel.pythonanywhere.com/haikelfazzani
+- GET http://haikel.pythonanywhere.com/api/github/<username> 
+example : http://haikel.pythonanywhere.com/api/github/haikelfazzani
 ```json
 [
   {
@@ -21,3 +41,6 @@ example : http://haikel.pythonanywhere.com/haikelfazzani
 ### dev commands
 - pipenv shell
 - flask run
+
+### License  
+MIT

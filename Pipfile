@@ -1,7 +1,7 @@
 [[source]]
-name = "open-rest"
-url = "https://github.com/haikelfazzani/open-rest/"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
+name = "pypi"
 
 [dev-packages]
 
@@ -10,6 +10,8 @@ verify_ssl = true
 [packages]
 requests = "*"
 flask = "*"
+shub = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.8"
