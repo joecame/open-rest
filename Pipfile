@@ -12,6 +12,7 @@ requests = "*"
 flask = "*"
 shub = "*"
 beautifulsoup4 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
