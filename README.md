@@ -1,7 +1,7 @@
 # Open rest
 
 ### Atom package details/stats
-- GET http://haikel.pythonanywhere.com/api/atom/package/<name> 
+- GET http://haikel.pythonanywhere.com/api/atom/package/{name} 
 ```json
 {
   "package_author": "atom",
@@ -21,7 +21,7 @@
 ```
 
 ### Github user main languages used in repos
-- GET http://haikel.pythonanywhere.com/api/github/<username> 
+- GET http://haikel.pythonanywhere.com/api/github/{username} 
 example : http://haikel.pythonanywhere.com/api/github/haikelfazzani
 ```json
 [

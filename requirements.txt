@@ -1,0 +1,4 @@
+requests = "*"
+flask = "*"
+shub = "*"
+beautifulsoup4 = "*"
