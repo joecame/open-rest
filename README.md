@@ -21,7 +21,7 @@
 ```
 
 ### Github user main languages used in repos
-- GET https://open-rest.herokuapp.com/api/github/{username} 
+- GET https://open-rest.herokuapp.com/api/github/{username}   
 example : https://open-rest.herokuapp.com/api/github/haikelfazzani
 ```json
 [

@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import requests
 from bs4 import BeautifulSoup
+from flask_cors import CORS,cross_origin
 
 langs = ['java', 'javascript','typescript','css','html',
 'sql','plsql','plpgsql',
@@ -9,11 +10,13 @@ langs = ['java', 'javascript','typescript','css','html',
 languages = ['C', 'Cpp', 'Cpp14', 'Java', 'Python', 'Python3', 'Scala', 'Php', 'Perl', 'Csharp']
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # ['C', 'CPP', 'CPP11', 'CPP14', 'CLOJURE', 'CSHARP', 'GO', 'HASKELL', 
 # 'JAVA', 'JAVA8', 'JAVASCRIPT', 'JAVASCRIPT_NODE', 'OBJECTIVEC', 'PASCAL', 
 # 'PERL', 'PHP', 'PYTHON', 'PYTHON3', 'R', 'RUBY', 'RUST', 'SCALA', 'SWIFT', 'SWIFT_4_1']
 @app.route('/api/runcodev2/<lang>/<code>')
+@cross_origin()
 def run_code(lang,code):
 	# 73a1fc29f9a43c67a8bc996777ebb248d9b8b9cd
 	data = {
@@ -27,13 +30,17 @@ def run_code(lang,code):
 	r = requests.post(u'https://api.hackerearth.com/v3/code/run/', data=data)
 	return r.json()["run_status"]
 
-@app.route('/api/runcode/<lang>/<code>')
-def gfg_compile(lang,code):
-    data = {'lang': lang,'code': code,'input': None,'save': False}
-    r = requests.post("https://ide.geeksforgeeks.org/main.php", data=data)
-    return r.json()
+@app.route('/api/runcode', methods=['POST'])
+@cross_origin()
+def gfg_compile():	
+	user_code = request.json['code']
+	lang_choosed = request.json['lang']
+	data = {'lang': lang_choosed,'code': user_code,'input': None,'save': False}
+	r = requests.post("https://ide.geeksforgeeks.org/main.php", data=data)
+	return r.json()
 
 @app.route('/api/github/<username>')
+@cross_origin()
 def index(username):
 	r = requests.get(f'https://api.github.com/users/{username}/repos?per_page=200')	
 	total = 0
@@ -60,6 +67,7 @@ def index(username):
 	return jsonify(persLangs)
 
 @app.route('/api/atom/package/<name>')
+@cross_origin()
 def atom_package_details(name):
 	resp = requests.get(f'https://atom.io/packages/search?q={name}')
 	soup = BeautifulSoup(resp.content, 'html.parser')
