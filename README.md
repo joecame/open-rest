@@ -40,10 +40,12 @@ example : https://open-rest.herokuapp.com/api/github/haikelfazzani
 
 ### Run code:
 - POST /api/runcodev2  
-# ['C', 'CPP', 'CPP11', 'CPP14', 'CLOJURE', 'CSHARP', 'GO', 'HASKELL', 
-# 'JAVA', 'JAVA8', 'JAVASCRIPT', 'JAVASCRIPT_NODE', 'OBJECTIVEC', 'PASCAL', 
-# 'PERL', 'PHP', 'PYTHON', 'PYTHON3', 'R', 'RUBY', 'RUST', 'SCALA', 'SWIFT', 'SWIFT_4_1']  
- 
+```
+['C', 'CPP', 'CPP11', 'CPP14', 'CLOJURE', 'CSHARP', 'GO', 'HASKELL', 
+'JAVA', 'JAVA8', 'JAVASCRIPT', 'JAVASCRIPT_NODE', 'OBJECTIVEC', 'PASCAL', 
+'PERL', 'PHP', 'PYTHON', 'PYTHON3', 'R', 'RUBY', 'RUST', 'SCALA', 'SWIFT', 'SWIFT_4_1']  
+```
+
 Example : http://localhost:5000/api/runcodev2/python3/print(5)
 ```json
 {
@@ -63,7 +65,9 @@ Example : http://localhost:5000/api/runcodev2/python3/print(5)
 }
 ```
 - POST /api/runcode  
+```
 languages = ['C', 'Cpp', 'Cpp14', 'Java', 'Python', 'Python3', 'Scala', 'Php', 'Perl', 'Csharp']
+```
 
 ```json
 {
