@@ -8,6 +8,6 @@ app = Flask(__name__)
 app.debug = True
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-app.register_blueprint(github, url_prefix='/')
+app.register_blueprint(github, url_prefix='/api/github')
 app.register_blueprint(atom, url_prefix='/')
 app.register_blueprint(runcode, url_prefix='/')

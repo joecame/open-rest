@@ -7,7 +7,13 @@ langs = ['java', 'javascript','typescript','css','html',
 'sql','plsql','plpgsql',
 'php','python', 'go', 'rust', 'c', 'c++', 'csharp', 'dart', 'hack', 'shell']
 
-@github.route('/api/github/<username>')
+@github.route('/active_users')
+def active_users():
+	response = requests.get('http://www.githubstats.com/contributions/tunisia')
+	jsonObj = response.json()
+	return jsonify(jsonObj)
+
+@github.route('/<username>')
 def index(username):
 	r = requests.get(f'https://api.github.com/users/{username}/repos?per_page=200')	
 	total = 0
