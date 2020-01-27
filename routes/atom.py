@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 atom = Blueprint('atom', __name__)
 
-@atom.route('/api/atom/package/<name>')
+@atom.route('/api/atom/package/<name>', methods=['GET'])
 def atom_package_details(name):
 	resp = requests.get(f'https://atom.io/packages/search?q={name}')
 	soup = BeautifulSoup(resp.content, 'html.parser')

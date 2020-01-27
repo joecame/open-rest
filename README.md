@@ -46,7 +46,7 @@ example : https://open-rest.herokuapp.com/api/github/haikelfazzani
 'PERL', 'PHP', 'PYTHON', 'PYTHON3', 'R', 'RUBY', 'RUST', 'SCALA', 'SWIFT', 'SWIFT_4_1']  
 ```
 
-Example : http://localhost:5000/api/runcodev2/python3/print(5)
+Example : api/runcodev2/python3/print(5)
 ```json
 {
   "async": 0,

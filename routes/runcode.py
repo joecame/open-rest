@@ -8,7 +8,7 @@ languages = ['C', 'Cpp', 'Cpp14', 'Java', 'Python', 'Python3', 'Scala', 'Php', '
 # ['C', 'CPP', 'CPP11', 'CPP14', 'CLOJURE', 'CSHARP', 'GO', 'HASKELL', 
 # 'JAVA', 'JAVA8', 'JAVASCRIPT', 'JAVASCRIPT_NODE', 'OBJECTIVEC', 'PASCAL', 
 # 'PERL', 'PHP', 'PYTHON', 'PYTHON3', 'R', 'RUBY', 'RUST', 'SCALA', 'SWIFT', 'SWIFT_4_1']
-@runcode.route('/api/runcodev2/<lang>/<code>')
+@runcode.route('/api/runcodev2/<lang>/<code>', methods=['GET'])
 def run_code(lang,code):
 	# 73a1fc29f9a43c67a8bc996777ebb248d9b8b9cd
 	data = {
